@@ -1,0 +1,33 @@
+/*--------------------------------*/
+/*          HERO SECTION          */
+/*--------------------------------*/
+.main-s {
+  padding-top: 8rem;
+  min-height: 100vh;
+}
+
+.hero-bg {
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Paragraph */
+.long-p {
+  max-width: 52rem;
+}
+
+/* Button */
+.basic-btn {
+  margin-top: 2px;
+}
+
+/*--------------------------------*/
+/*         RESPONSIVENESS         */
+/*--------------------------------*/
+@media screen and (max-width: 999px) {
+  .hero-bg {
+    opacity: 0.2;
+  }
+}

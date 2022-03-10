@@ -1,0 +1,559 @@
+/* Imported Typeface - Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/*-----------------------------*/
+/*   BASIC DOCUMENT STYLING    */
+/*-----------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+:root {
+  --page-color: #5a98f4;
+  --highlight-color: #5a98f430;
+}
+
+/* Font Sizing & Smooth Scroll */
+html {
+  font-size: 62.5%; /* Equivalent of 10px ->
+  because 10px / 16px = 0.625px => relative size 62.5%*/
+  scroll-behavior: smooth;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/*----------------*/
+/*    THE BODY    */
+/*----------------*/
+body {
+  font-family: "Roboto", sans-serif;
+  cursor: default;
+}
+
+/*----------------*/
+/*    HIGHLIGHT   */
+/*----------------*/
+::selection {
+  background: var(--highlight-color);
+}
+
+::-moz-selection {
+  background: var(--highlight-color);
+}
+
+/*--------------------------------*/
+/*            SCROLLBAR           */
+/*--------------------------------*/
+body::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+#sidenav::-webkit-scrollbar {
+  width: 0.1em;
+}
+
+/* Scrollbar Track */
+body::-webkit-scrollbar-track,
+#sidenav::-webkit-scrollbar-track {
+  background: #d8d8d8;
+}
+
+/* Scrollbar Handle */
+body::-webkit-scrollbar-thumb,
+#sidenav::-webkit-scrollbar-thumb {
+  background: var(--page-color);
+  border-radius: 5rem;
+}
+
+/*--------------------------------*/
+/*          FLEX PRESETS          */
+/*--------------------------------*/
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.a-c {
+  align-items: center;
+}
+
+.j-spb {
+  justify-content: space-between;
+}
+
+/*--------------------------------*/
+/*          GRID PRESETS          */
+/*--------------------------------*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8%;
+}
+
+/*--------------------------------*/
+/*           ELEMENTS             */
+/*--------------------------------*/
+li {
+  list-style-type: none;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+/* Buttons */
+button {
+  width: 18rem;
+  height: 6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: #5d8cd3;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 8px;
+}
+
+button,
+button a {
+  color: #fff;
+}
+
+button a {
+  display: block;
+  padding: 2rem 0;
+}
+
+button:hover,
+.burger-menu:hover .bar {
+  border: 2px solid var(--page-color);
+  background-color: transparent;
+}
+
+button:hover,
+button:hover a {
+  color: var(--page-color);
+}
+
+button:hover,
+.logo-link:hover .logo,
+.burger-menu:hover .bar {
+  transform: scale(0.8);
+}
+
+.burger-menu:hover .bar {
+  border: 1px solid var(--page-color);
+}
+
+/*--------------------------------*/
+/*          TEXT PRESETS          */
+/*--------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+p {
+  font-size: 1.6rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/*--------------------------------*/
+/*           CLASSES              */
+/*--------------------------------*/
+.round {
+  border-radius: 50px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.main-s {
+  min-height: 90rem;
+  justify-content: center;
+}
+
+.m-2 {
+  margin-bottom: 1.4rem;
+}
+
+/*------------------------------*/
+/*     POSITIONING PRESETS      */
+/*------------------------------*/
+.p-rel {
+  position: relative;
+}
+
+.p-abs {
+  position: absolute;
+}
+
+/*------------------------------*/
+/*      TRANSITION PRESETS      */
+/*------------------------------*/
+.trans-4ms {
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+/* 2ms */
+.trans-2ms {
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/*--------------------------------*/
+/*            NAVBAR              */
+/*--------------------------------*/
+nav {
+  width: 100%;
+  height: 9rem;
+  box-shadow: 0px 10px 31px -1px rgba(158, 158, 158, 0.2);
+  -webkit-box-shadow: 0px 10px 31px -1px rgba(158, 158, 158, 0.2);
+  -moz-box-shadow: 0px 10px 31px -1px rgba(158, 158, 158, 0.2);
+  z-index: 500;
+}
+
+nav,
+.main-s {
+  padding: 0 8%;
+}
+
+nav,
+.sidenav {
+  top: 0;
+  position: fixed;
+  background-color: #fff;
+}
+
+/* Logo Container*/
+.logo-link {
+  padding: 2rem 0;
+}
+
+/* Logo */
+.logo {
+  width: 12.8rem;
+  margin-left: 1.2rem;
+}
+
+/*------------------*/
+/*      BURGER      */
+/*------------------*/
+.burger-menu {
+  padding: 8px;
+}
+
+/* Bars */
+.bar {
+  width: 3.5rem;
+  height: 6px;
+  background-color: var(--page-color);
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 2px;
+}
+
+/* Rotate first bar */
+.change .b-1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 8px);
+  transform: rotate(-45deg) translate(-9px, 8px);
+}
+
+/* Fade out the second bar */
+.change .b-2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .b-3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -9px);
+  transform: rotate(45deg) translate(-8px, -9px);
+}
+
+.change:hover .b-2 {
+  opacity: 1;
+}
+
+/*------------------*/
+/*    CENTER NAV    */
+/*------------------*/
+.nav-link,
+.sidenav-link {
+  font-size: 1.6rem;
+  padding: 3.6rem 2rem;
+  color: #888888;
+}
+
+.a-nav-link,
+.a-sidenav-link,
+.sidenav-link:hover {
+  color: #5a98f4;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.a-sidenav-link,
+.sidenav-link:hover {
+  color: #5a98f4;
+  font-weight: 500;
+  background: #5a98f410;
+}
+
+/*------------------*/
+/*     LEFT NAV     */
+/*------------------*/
+.nav-btn {
+  width: 14rem;
+  height: 5rem;
+  font-size: 1.4rem;
+  box-shadow: 0px 10px 31px -1px rgba(158, 158, 158, 0.26);
+  -webkit-box-shadow: 0px 10px 31px -1px rgba(158, 158, 158, 0.26);
+  -moz-box-shadow: 0px 10px 31px -1px rgba(158, 158, 158, 0.26);
+}
+
+/*--------------------------------*/
+/*            SIDENAV             */
+/*--------------------------------*/
+.sidenav {
+  left: 0;
+  padding: 11rem 0 0 0;
+  width: 36rem;
+  height: 100%;
+  display: none;
+  z-index: 300;
+  box-shadow: 24px 0px 31px -1px rgba(158, 158, 158, 0.1);
+  -webkit-box-shadow: 24px 0px 31px -1px rgba(158, 158, 158, 0.1);
+  -moz-box-shadow: 24px 0px 31px -1px rgba(158, 158, 158, 0.1);
+}
+
+/* Links */
+.sidenav-link {
+  display: block;
+  padding: 1.6rem;
+}
+
+.b-icons {
+  padding: 1rem 4px;
+  margin: 0 2rem 0 39%;
+}
+
+/*--------------------------------*/
+/*         RESPONSIVENESS         */
+/*--------------------------------*/
+@media screen and (max-width: 1366px) {
+  .m-2 {
+    margin-bottom: 1rem;
+  }
+
+  /* Buttons */
+  button {
+    width: 16rem;
+    height: 5.4rem;
+    font-size: 1.4rem;
+  }
+
+  button a {
+    padding: 1.8rem 0;
+  }
+
+  /*--------------------------------*/
+  /*          TEXT PRESETS          */
+  /*--------------------------------*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 3.6rem;
+  }
+
+  /*--------------------------------*/
+  /*            NAVBAR              */
+  /*--------------------------------*/
+  nav,
+  .main-s {
+    padding: 0 4%;
+  }
+
+  nav {
+    height: 8rem;
+  }
+
+  /* Links */
+  .nav-link {
+    padding: 3rem 2rem;
+  }
+
+  /* Logo */
+  .logo {
+    width: 11.2rem;
+    padding-top: 4px;
+    margin-left: 1.2rem;
+  }
+
+  /*--------------------------------*/
+  /*            SIDENAV             */
+  /*--------------------------------*/
+  .sidenav {
+    padding: 8.4rem 0 0 0;
+    max-width: 30%;
+    min-width: 20rem;
+    height: 100%;
+  }
+
+  /* Icons */
+  .b-icons {
+    margin-left: 12%;
+  }
+}
+
+@media screen and (max-width: 864px) {
+  /*--------------------------------*/
+  /*          TEXT PRESETS          */
+  /*--------------------------------*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 3.6rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+
+  /*--------------------------------*/
+  /*            NAVBAR              */
+  /*--------------------------------*/
+  nav {
+    padding: 0 2%;
+  }
+
+  /* Links */
+  .nav-link {
+    padding: 3rem 1rem;
+  }
+
+  /* Logo */
+  .logo {
+    margin-left: 1rem;
+  }
+
+  /*--------------------------------*/
+  /*            SIDENAV             */
+  /*--------------------------------*/
+  .b-icons {
+    margin-left: 8%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Buttons */
+  button {
+    width: 16rem;
+    height: 5.4rem;
+  }
+
+  /*--------------------------------*/
+  /*            NAVBAR              */
+  /*--------------------------------*/
+  nav {
+    height: 6rem;
+  }
+
+  /* Links */
+  .center-nav {
+    display: none;
+  }
+
+  /* Logo */
+  .logo {
+    width: 9rem;
+    margin-left: 0.6rem;
+  }
+
+  /* Burger Menu */
+  .burger-menu:hover .bar {
+    background-color: var(--page-color);
+  }
+
+  /*------------------*/
+  /*     LEFT NAV     */
+  /*------------------*/
+  .nav-btn {
+    width: 10rem;
+    height: 4.2rem;
+    font-size: 1.2rem;
+  }
+
+  /*--------------------------------*/
+  /*            SIDENAV             */
+  /*--------------------------------*/
+  .sidenav {
+    padding: 7rem 0 0 0;
+    width: 50%;
+    max-width: initial;
+    min-width: 22rem;
+  }
+
+  /* Links */
+  .sidenav-link {
+    font-size: 1.4rem;
+  }
+
+  .b-icons {
+    padding: 1rem 4px;
+    margin: 0 2rem 0 1rem;
+  }
+}
+
+@media screen and (max-width: 299px) {
+  /*--------------------------------*/
+  /*          TEXT PRESETS          */
+  /*--------------------------------*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 2.8rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  /* Buttons */
+  button {
+    width: 14rem;
+  }
+}
